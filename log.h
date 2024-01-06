@@ -21,10 +21,3 @@ bool CheckCapsLock (){
 bool CheckShift(){
 	return(GetKeyState(VK_SHIFT) & 0x8000) != 0;
 }
-
-void Delete(const StringInput && "log.txt"){
-	ifstream inFile("log.txt");
-	if (!inFile.is_open()){
-		return;
-	}
-}

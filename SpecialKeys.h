@@ -1,7 +1,6 @@
 #include <Windows.h>
 #include <winuser.h>
 #include <bits/stdc++.h>
-#include "log.h"
 
 using namespace std;
 
