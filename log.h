@@ -14,10 +14,10 @@ void LOG(string input) {
 	}
 }
 
-bool CheckCapsLock (){
+bool CapsLock_isOn(){
 	return (GetKeyState(VK_CAPITAL) & 0x0001) != 0;
 }
 
-bool CheckShift(){
+bool Shift_isOn(){
 	return(GetKeyState(VK_SHIFT) & 0x8000) != 0;
 }
